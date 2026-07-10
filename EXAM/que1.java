@@ -1,11 +1,33 @@
 import java.util.Scanner;
 public class que1{
+    public static boolean prime(int n){
+        boolean isPrime = false;
+        for(int i = 2;i<n;i++){
+            if(n%i == 0){
+                return false;
+            }
+            
+        }
+        return true;
+    }
+    public static int totslprime(int n){
+        int sum = 0;
+        if(n==0) return sum;
+        if(n==1) return sum;
+        for(int i =2;i<=n;i++){
+            
+            if((prime(i))== true){
+                sum += i;
+            }
+        }
+        return sum;
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt;
-        int 
-        for(int i = 2;i<n;i++){
-            if(n)
-        }
+        int n = sc.nextInt();
+        
+        
+        System.out.println(totslprime(n));
+        
     }
 }

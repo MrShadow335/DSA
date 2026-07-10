@@ -1,13 +1,18 @@
 import java.util.Scanner;
 public class qn10{
     public static void main(String[] args){
-        int n= 4;
-        for(int i = 0;i<=n;i++){
-            for(int j =1;j<=i;j++){
-                System.out.print("*");
-            }
-            System.out.println("");
-        }
+        int n = 100;
+        //WITh LOOP
+        // int count = 0;
+        // while(n != 0){
+        //     n/=10;
+        //     count++;
+        // }
+        // System.out.println(count);
+
+        //USING STRING
+        String s = "" + n;
+        System.out.println(s.length());
     }
 }
-// let build a habit together
+ 

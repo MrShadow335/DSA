@@ -5,7 +5,7 @@ public class qn9{
         System.out.println("Enter your beloved numner:");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        //1ST MWTHOD
+        //1ST METHOD
         // String s = "";
         // s+= n;
         // System.out.println(s);
