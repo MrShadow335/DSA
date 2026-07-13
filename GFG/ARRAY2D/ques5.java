@@ -1,22 +1,17 @@
 import java.util.Scanner;
-public class ques4{
-    public static void min_max(int[][] arr){
-        int min = Integer.MAX_VALUE;
-        for(int i=0; i<arr.length;i++){
-            int max = Integer.MIN_VALUE;
-            for(int j =0;j<arr[0].length;j++){
-            if(arr[i][j] > max){
-                max = arr[i][j];
+public class ques5{
+    public static void print(int[][] arr){
+        
+        for(int j =0;j<arr[0].length;j++){
+            for(int i=0; i<arr.length;i++){
+                System.out.print(arr[i][j] + " ");
             }
-            }
-            if(max < min) {
-                min= max;
-            }
+            System.out.println();
         }
-        System.out.println(min);
+        
         
     }
-    
+   
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Rows:");
@@ -31,7 +26,7 @@ public class ques4{
 
             }
        }
-        min_max(arr);
+        print(arr);
         
         
     }
