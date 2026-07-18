@@ -1,3 +1,4 @@
+//Sum of prime number in a given range
 import java.util.Scanner;
 public class que1{
     public static boolean prime(int n){
@@ -10,7 +11,7 @@ public class que1{
         }
         return true;
     }
-    public static int totslprime(int n){
+    public static int totalprime(int n){
         int sum = 0;
         if(n==0) return sum;
         if(n==1) return sum;
@@ -27,7 +28,7 @@ public class que1{
         int n = sc.nextInt();
         
         
-        System.out.println(totslprime(n));
+        System.out.println(totalprime(n));
         
     }
 }
