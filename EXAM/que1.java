@@ -1,4 +1,5 @@
 //Sum of prime number in a given range
+// 2nnd dayy
 import java.util.Scanner;
 public class que1{
     public static boolean prime(int n){
