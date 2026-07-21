@@ -1,3 +1,4 @@
+//power of the number a^b
 import java.util.Scanner;
 public class q6{
     public static int power(int a, int b){
