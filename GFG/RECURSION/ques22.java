@@ -17,8 +17,8 @@ public class ques22 {
             }
         }
         int freq = j-i;
-        
         ans += freq;
+         
         ans += s.charAt(i);
         return ans;
 
