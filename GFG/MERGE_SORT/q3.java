@@ -1,13 +1,19 @@
-/**
+ /**
  * merge sort
  */
-public class ques23 {
+public class q3{
+    static int count;
     public static void main(String[] args) {
-        int[] arr = {1,6,5,4,3,8,7,9};
+        int[] arr = {2, 4, 1, 3, 5};
+        //mergeSort(arr);
+        inversionCount(arr);
+        System.out.println(count);
+        
+    }
+    public static int inversionCount(int[] arr) {
+        count = 0;
         mergeSort(arr);
-        for(int ele:arr){
-            System.out.print(ele + " ");
-        }
+        return count;
     }
     public static void mergeSort(int[] arr) {
         int n = arr.length;
@@ -19,14 +25,13 @@ public class ques23 {
             a[i] = arr[idx];
             idx++;
         }
-        for(int i =0; i<a.length; i++){
+        for(int i =0; i<b.length; i++){
             b[i] = arr[idx];
             idx++;
         }
         mergeSort(a);
         mergeSort(b);
-        merge(a, b, arr);
-        
+        merge(a, b, arr);    
     }
     public static void merge(int[] a, int[] b, int[] c) {
         int i =0, j=0, k=0;
@@ -40,6 +45,7 @@ public class ques23 {
                 c[k] = b[j];
                 j++;
                 k++;
+                count+= (a.length-i);
             }
         }
         while(i<a.length) {
@@ -52,6 +58,6 @@ public class ques23 {
             j++;
             k++;
         }
-
     }
 }
+
