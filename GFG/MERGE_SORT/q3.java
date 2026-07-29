@@ -1,5 +1,5 @@
  /**
- * merge sort
+ * inversion sort
  */
 public class q3{
     static int count;

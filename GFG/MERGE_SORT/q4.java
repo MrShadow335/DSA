@@ -1,45 +1,71 @@
-// merge two sorted arrays keeping duplicates
+ /**
+ * merge sort
+ */
 public class q4 {
+    static int count;
     public static void main(String[] args) {
-        int[] a = {1,2,3,4,5,6,7};
-        int[] b = {3,4,5,6,7,8,9,10,11,12};
-        mergeSort(a,b);
+        int[] arr = {1,6,5,9,4,11,3,3,8,7,9};
+        mergeSort(arr);
+        for(int ele:arr){
+            System.out.print(ele + " ");
+        }
+        System.out.println("Reverse Pairs = " + count);
+        
     }
-    public static void mergeSort(int[] a, int[] b) {
-        int[] c = new int[a.length + b.length];
+    public static void mergeSort(int[] arr) {
+        int n = arr.length;
+        if(n==1) return;
+        int[] a = new int[n/2];
+        int[] b = new int[n-n/2];
+        int idx = 0;
+        for(int i =0; i<a.length; i++){
+            a[i] = arr[idx];
+            idx++;
+        }
+        for(int i =0; i<b.length; i++){
+            b[i] = arr[idx];
+            idx++;
+        }
+        mergeSort(a);
+        mergeSort(b);
+        count += countPairs(a,b);
+        merge(a, b, arr);    
+    }
+    public static int countPairs(int[] a, int[] b) {
+        int cnt = 0;
+        int j =0;
+        for( int i=0; i<a.length; i++){
+            while(j < b.length && ((long)a[i] > 2L*b[j])){
+                j++;
+            }
+        cnt += j;
+        }
+        return cnt;
+    }
+    public static void merge(int[] a, int[] b, int[] c) {
         int i =0, j=0, k=0;
         while(i<a.length && j<b.length){
-            if(a[i] < b[j]){
+            if(a[i] <= b[j]){
                 c[k] = a[i];
                 i++;
                 k++;
             }
-            else if(b[j] < a[i]){
-                c[k] = b[j];
-                j++;
-                k++;
-            }
-            else {
-                c[k] = a[i];
-                i++;
-                k++;
+            else{
                 c[k] = b[j];
                 j++;
                 k++;
             }
         }
-        while(i<a.length){
+        while(i<a.length) {
             c[k] = a[i];
             i++;
             k++;
         }
-        while(j<b.length){
+        while(j<b.length) {
             c[k] = b[j];
             j++;
             k++;
         }
-        for(int ele: c){
-            System.out.print(ele + " ");
-        }
     }
 }
+
