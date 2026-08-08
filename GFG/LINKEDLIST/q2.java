@@ -12,6 +12,59 @@
         Node tail;
         int size;
 
+        void delete(int idx){
+            if(idx<0 && idx>=size){
+                System.out.println("Invalid Input");
+                return;
+            }
+            if(idx==0) {
+                DeleteAtHead();
+                return;
+            }
+            Node temp = head;
+            for(int i=1; i <= idx-1; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            if(idx==size-1) tail = temp;
+            size--;
+        }
+        int get(int idx){
+            Node temp = head;
+            for(int i =0; i<idx; i++){
+                temp = temp.next;
+            }
+            return temp.val;
+        }
+        void insert(int idx, int val){
+            if(idx<0 || idx>size){
+                System.out.println("Invalid Input");
+                return;
+            }
+            if(idx==0) addAtHead(val);
+            else if(idx==size) addAtTAil(val);
+            else{
+                Node temp = head;
+                for(int i = 1; i<=idx-1; i++){
+                    temp = temp.next;
+                }
+                Node t = new Node(val);
+                t.next = temp.next;
+                temp.next = t;
+                size++;
+            }
+        }
+        int search(int val){
+            if(head==null) return -1;
+            Node temp = head;
+            int idx = 0;
+            while(temp != null){
+                if(temp.val == val) return idx;
+                temp = temp.next;
+                idx++;
+            }
+            return -1;
+        }
         void display(){
             if(head == null) return;
             Node temp = head;
@@ -79,23 +132,17 @@ public class q2 {
     public static void main(String[] args) {
         Linkedlist ll = new Linkedlist();
         ll.display();
-        ll.addAtTAil(10);
-        ll.addAtTAil(20);
-        ll.addAtTAil(30);
-        ll.addAtTAil(40);
-        ll.addAtTAil(50);
+        ll.addAtTAil(10);  ll.addAtTAil(20);  ll.addAtTAil(30);   ll.addAtTAil(40);   ll.addAtTAil(50);
         ll.display();
-        ll.addAtHead(60);
-        ll.display();
-        ll.DeleteAtHead();
-        ll.display();
-        ll.DeleteAtHead();
-        ll.display();
-        ll.DeleteAtTail();
-        ll.display();
-        ll.DeleteAtTail();
-        ll.display();
-
+        ll.addAtHead(60);   ll.display();
+        ll.DeleteAtHead();  ll.display();
+        ll.DeleteAtHead();  ll.display();
+        ll.DeleteAtTail();  ll.display();
+        ll.DeleteAtTail();  ll.display();
+        System.out.println(ll.search(30));
+        ll.insert(2,40);    ll.display();
+        System.out.println(ll.get(2));
+        ll.delete(2);       ll.display();
     }
     
 }
