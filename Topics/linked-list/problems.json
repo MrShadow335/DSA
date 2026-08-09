@@ -4,7 +4,7 @@
     "slug": "linked-list",
     "name": "Linked List"
   },
-  "updatedAt": "2026-08-09T07:06:52.720Z",
+  "updatedAt": "2026-08-09T07:06:59.569Z",
   "problems": [
     {
       "frontendId": "21",
@@ -23,6 +23,26 @@
           "path": "0021-merge-two-sorted-lists/0021-merge-two-sorted-lists.java",
           "sha": "9281fc0e4a5ecdde02aba2fad12fc85da2d56ef7",
           "lastSyncedAt": "2026-08-09T07:06:52.720Z"
+        }
+      ]
+    },
+    {
+      "frontendId": "61",
+      "title": "Rotate List",
+      "slug": "rotate-list",
+      "problemName": "0061-rotate-list",
+      "difficulty": "Medium",
+      "leetcodeUrl": "https://leetcode.com/problems/rotate-list/",
+      "folderPath": "0061-rotate-list/",
+      "readmePath": "0061-rotate-list/README.md",
+      "solutions": [
+        {
+          "language": "Java",
+          "extension": ".java",
+          "filename": "0061-rotate-list.java",
+          "path": "0061-rotate-list/0061-rotate-list.java",
+          "sha": "43727552dae998c0a777ead4ea50233923041c67",
+          "lastSyncedAt": "2026-08-09T07:06:59.569Z"
         }
       ]
     },
