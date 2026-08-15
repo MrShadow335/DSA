@@ -124,5 +124,9 @@ public class doublyll {
         list.insertAtIdx(1,40);
         list.display();
         list.reverseDisplay();
+        list.deleteAtHead();
+        list.display();
+        list.deleteAtTail();
+        list.display();
     }
 }
