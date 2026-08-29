@@ -9,11 +9,24 @@ public class q2 {
        pushAtBottom(st,ele);
        st.push(top);
     }
+    public static void pushAtIndex(Stack<Integer> st, int idx, int ele) {
+        Stack<Integer> st2  = new Stack<>();
+        while(st.size() > idx){
+            st2.push(st.pop());
+        }
+        st.push(ele);
+        while(st2.size() > 0){
+            st.push(st2.pop());
+        }
+        System.out.println(st);
+        
+    }
     public static void main(String[] args){
         Stack<Integer> st = new Stack<>();
         st.push(10); st.push(11);  st.push(12);  st.push(13);  st.push(14); st.push(15);
-        pushAtBottom(st, 16);
+        //pushAtBottom(st, 16);
         System.out.println(st);
-        System.out.println(st.peek());
+        //System.out.println(st.peek());
+        pushAtIndex(st,2,3);
     }
 }
