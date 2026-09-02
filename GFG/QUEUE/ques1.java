@@ -1,5 +1,25 @@
 import java.util.*;
 public class ques1 {
+    public static void reverse(Queue<Integer> q) {
+        Stack<Integer> st = new Stack<>();
+        while(q.size()>0){
+            st.push(q.remove());
+        }
+        while(st.size()>0){
+            q.add(st.pop());
+        }
+        transverse(q);
+    }
+    public static void removeAtIdx(Queue<Integer> q, int idx) {
+        int n = q.size();
+        for(int i=0; i<idx; i++){
+            q.add(q.remove());
+        }
+        q.remove();
+        for(int i=0; i<q.size()-idx; i++){
+            q.add(q.remove());
+        }
+    }
     public static int peekAtIndex(Queue<Integer> q, int idx) {
         int n = q.size();
         for(int i=0; i<=idx-1; i++){
@@ -36,10 +56,15 @@ public class ques1 {
         // System.out.println(q.remove());
         // System.out.println(q+" "+q.size());
         // System.out.println(q.remove()+" "+q);
+        // transverse(q);
+        // addAtIndex(q, 2, 25);
+        // transverse(q);
+        // int res = peekAtIndex(q,3);
+        // System.out.println(res);
+        // transverse(q);
+        // removeAtIdx(q,2);
         transverse(q);
-        addAtIndex(q, 2, 25);
-        transverse(q);
-        int res = peekAtIndex(q,3);
-        System.out.println(res);
+        reverse(q);
+
     }
 }
